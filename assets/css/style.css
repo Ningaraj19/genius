@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #preloader:before {
-  content: "";
+  content: "geNIus";
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
@@ -350,7 +350,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: url("/student.jpg");
+  background: url("student.jpg");
   background-size: cover;
   position: relative;
 }
