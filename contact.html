@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="logo.png" rel="icon">
-  <link href="logo.png" rel="apple-touch-icon">
+  <link href="jnv.jpg" rel="icon">
+  <link href="jnv.jpg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -88,7 +88,7 @@
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
         <h2>Contact Us</h2>
-        <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+        <p>It is the right platform to contact us for any queries and for any suggestions and feedbacks.</p>
       </div>
     </div><!-- End Breadcrumbs -->
 
@@ -130,7 +130,7 @@
           
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="webform.php" method="POST" class="form">
+            <form class="form" onsubmit="sendEmail(); reset(); return false;">
                 <div class="form-group">
                     <label for="name" class="form-label">Your Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" tabindex="1" required>
@@ -231,7 +231,24 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function sendEmail(){
+      Email.send({
+        Host : "smtp.gmail.com",
+        Username : "host@gmail.com",
+        Password : "89575623",
+        To : 'ningarajatnoor108@gmail.com',
+        From : document.getElementById("email").value,
+        Subject : document.getElementById("subject").value,
+        Body : "Name: " + document.getElementById("name").value
+              + "<br> Email:" + document.getElementById("email").value
+              + "<br> Message: " + document.getElementById("message").value
+    }).then(
+      message => alert("Message Sent Succesfully")
+    );
+    }
+  </script>
 </body>
 
 </html>
