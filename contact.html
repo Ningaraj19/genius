@@ -231,24 +231,26 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <script>
-    function sendEmail(){
+  
+  <script src=
+    "https://smtpjs.com/v3/smtp.js">
+  </script>
+ 
+  <script type="text/javascript">
+    function sendEmail() {
       Email.send({
-        Host : "smtp.gmail.com",
-        Username : "host@gmail.com",
-        Password : "89575623",
-        To : 'ningarajatnoor108@gmail.com',
-        From : document.getElementById("email").value,
-        Subject : document.getElementById("subject").value,
-        Body : "Name: " + document.getElementById("name").value
-              + "<br> Email:" + document.getElementById("email").value
-              + "<br> Message: " + document.getElementById("message").value
-    }).then(
-      message => alert("Message Sent Succesfully")
-    );
+        Host: "smtp.gmail.com",
+        Username: "email",
+        Password: "Enter your password",
+        To: 'ningarajatnoor108@gmail.com',
+        From: "email",
+        Body: "Message",
+      })
+        .then(function (message) {
+          alert("mail sent successfully")
+        });
     }
-  </script> 
+  </script>
 </body>
 
 </html>
